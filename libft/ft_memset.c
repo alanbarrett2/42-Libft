@@ -23,4 +23,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
-
+/*
+Memset - Void	*memset(void *b, int c, size_t len);
+DESCRIPTION; The memset() function writes len bytes of value c (converted to an unsigned char) to the string b. #include <string.h>
+Notes: typecast like this: ptr = (unsigned char*)b;
+(Understand testing)*/
