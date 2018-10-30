@@ -15,6 +15,8 @@ Memset - Void	*memset(void *b, int c, size_t len);
 DESCRIPTION; The memset() function writes len bytes of value c (converted to an unsigned char) to the string b. #include <string.h>
 Notes: typecast like this: ptr = (unsigned char*)b;
 (Understand testing)*/
+/* Usage: To initialize a region of memory. When you are trying to set a large chunk of contiguous memory to a 
+certain value, it becomes easy to do that using memset. */
 
 #include "libft.h"
 
@@ -31,6 +33,8 @@ void	*ft_memset(void *b, int c, size_t len)
 }
 
 /* Testing */
+
+#include <stdio.h>  /* At the top in order to use puts and then remove it */
 
 int	main()
 {
