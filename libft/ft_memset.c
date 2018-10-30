@@ -38,6 +38,7 @@ void	*ft_memset(void *b, int c, size_t len)
 
 int	main()
 {
+	char data[20];
 	memset (data, '\0', 20);
 	memset (data, 'A', 10);
 	puts(data);
