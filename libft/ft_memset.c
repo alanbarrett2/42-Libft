@@ -29,3 +29,13 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+
+/* Testing */
+
+int	main()
+{
+	memset (data, '\0', 20);
+	memset (data, 'A', 10);
+	puts(data);
+	return (0);
+}
