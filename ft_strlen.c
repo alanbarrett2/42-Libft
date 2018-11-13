@@ -21,4 +21,3 @@ size_t		ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-e1z3r
