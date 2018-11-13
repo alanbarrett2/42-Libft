@@ -6,7 +6,7 @@
 /*   By: albarret <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/12 17:28:40 by albarret          #+#    #+#             */
-/*   Updated: 2018/11/12 23:34:20 by albarret         ###   ########.fr       */
+/*   Updated: 2018/11/13 00:31:52 by albarret         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ static int		end(char const *s)
 
 	i = 0;
 	slen = (ft_strlen(s));
-	slen = slen - 1;
 	while (s[slen] == ' ' || s[slen] == '\t' || s[slen] == '\n')
 		slen--;
 	return (slen);
@@ -48,22 +47,31 @@ char	*ft_strtrim(char const *s)
 	int		start_len;
 	int		end_len;
 	char	*mem;
+	char const *sptr;
+	int 	i;
 
+	i = 0;
+	sptr = (char*)s;
 	start_len = start(s);
 	end_len = end(s);
 	if (!(s || !(mem = malloc(sizeof(char) * (ft_len_no_esc(start_len, end_len)) + 1))))
 		return (NULL);
 	while (start_len < end_len)
-		mem = s[start_len++];
+	{
+		mem[i] = sptr[start_len];
+		start_len++;
+		i++;
+	}
+	mem[i] = '\0';
 	return (mem);
 }
 
 int		main(void)
 {
-	char const	*ptr;
 	char		*mem;
+	char		*ptr;
 
-	ptr = "' ' '\t' '\n'this'\t'is' 'my'\n'string'\n' '\t'' '";
+	ptr = " thisismystring ";
 	ft_strtrim(ptr);
 	mem = ft_strtrim(ptr);
 	printf("%s\n", mem);
